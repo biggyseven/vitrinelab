@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#12382f">
+  <meta name="description" content="MboaTech Assistance, maquette fictive de dépannage informatique à Yaoundé. Services, tarifs indicatifs, horaires et coordonnées de démonstration.">
+  <title>MboaTech Assistance — Dépannage informatique à Yaoundé</title>
+  <style>
+    /* Palette et mesures communes */
+    :root {
+      color-scheme: light;
+      --ink: #18352f;
+      --green-950: #12382f;
+      --green-900: #19473b;
+      --green-700: #326451;
+      --green-100: #e7eee7;
+      --paper: #f6f5ef;
+      --white: #fffefa;
+      --muted: #63716b;
+      --line: #d9dfd7;
+      --lime: #d9ee83;
+      --red: #b74339;
+      --shadow: 0 18px 48px rgba(18, 56, 47, .11);
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --serif: Georgia, "Times New Roman", serif;
+      --mono: ui-monospace, "SFMono-Regular", Consolas, monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
+    button { font: inherit; }
+    img, svg { max-width: 100%; }
+    .container { width: min(1160px, calc(100% - 48px)); margin-inline: auto; }
+    .skip-link { position: absolute; z-index: 10; top: 10px; left: 10px; padding: 12px 16px; transform: translateY(-150%); background: var(--white); color: var(--ink); border: 2px solid var(--ink); }
+    .skip-link:focus { transform: translateY(0); }
+    .eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 18px; color: var(--green-700); font: 700 11px/1.4 var(--mono); letter-spacing: .12em; text-transform: uppercase; }
+    .eyebrow::before { content: ""; width: 24px; height: 2px; background: var(--red); }
+    .section-title { max-width: 670px; margin: 0; color: var(--ink); font: 500 clamp(36px, 5vw, 58px)/1.06 var(--serif); letter-spacing: -.04em; text-wrap: balance; }
+    .section-intro { max-width: 480px; margin: 18px 0 0; color: var(--muted); font-size: 15px; line-height: 1.75; }
+
+    /* En-tête et navigation */
+    .site-header { position: relative; z-index: 5; background: var(--green-950); color: var(--white); }
+    .header-inner { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; color: var(--white); text-decoration: none; }
+    .brand-mark { width: 36px; height: 36px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.38); color: var(--lime); font: 700 16px/1 var(--mono); }
+    .brand-name { display: block; font-size: 14px; font-weight: 750; letter-spacing: .08em; }
+    .brand-note { display: block; margin-top: 4px; color: #bdcec4; font: 9px/1.3 var(--mono); letter-spacing: .1em; text-transform: uppercase; }
+    .header-right { display: flex; align-items: center; gap: 30px; }
+    .site-nav { display: flex; align-items: center; gap: 25px; }
+    .site-nav a { color: #e2ebe4; text-decoration: none; font-size: 12px; font-weight: 600; transition: color .18s ease; }
+    .site-nav a:hover { color: var(--lime); }
+    .nav-contact { padding: 12px 15px; border: 1px solid rgba(255,255,255,.36); color: var(--white)!important; }
+    .nav-contact:hover { border-color: var(--lime); color: var(--lime)!important; }
+    .nav-toggle { display: none; min-height: 44px; padding: 0 12px; border: 1px solid rgba(255,255,255,.45); background: transparent; color: var(--white); cursor: pointer; }
+    :focus-visible { outline: 3px solid #e1f58d; outline-offset: 3px; }
+    .site-header :focus-visible { outline-color: var(--lime); }
+
+    /* Accueil : message et illustration vectorielle intégrée */
+    .hero { position: relative; overflow: hidden; background: var(--green-950); color: var(--white); }
+    .hero::after { position: absolute; right: -180px; bottom: -360px; width: 720px; height: 720px; border: 1px solid rgba(217,238,131,.13); border-radius: 50%; content: ""; pointer-events: none; }
+    .hero-grid { position: relative; z-index: 1; min-height: 570px; display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 48px; padding-block: 64px 76px; }
+    .hero .eyebrow { color: var(--lime); }
+    .hero h1 { max-width: 670px; margin: 0; font: 500 clamp(50px, 6.8vw, 82px)/.99 var(--serif); letter-spacing: -.055em; text-wrap: balance; }
+    .hero h1 em { color: var(--lime); font-style: normal; }
+    .hero-copy { max-width: 540px; margin: 24px 0 0; color: #d3dfd6; font-size: 16px; line-height: 1.8; }
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 30px; }
+    .button { min-height: 48px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 0 18px; border: 1px solid transparent; text-decoration: none; font-size: 12px; font-weight: 750; transition: transform .18s ease, background .18s ease, border-color .18s ease; }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { background: var(--lime); color: var(--green-950); }
+    .button-primary:hover { background: #e7f7a8; }
+    .button-quiet { border-color: rgba(255,255,255,.4); color: var(--white); }
+    .button-quiet:hover { border-color: var(--lime); color: var(--lime); }
+    .hero-caption { display: flex; align-items: center; gap: 10px; margin-top: 34px; color: #becdc3; font: 10px/1.5 var(--mono); letter-spacing: .06em; text-transform: uppercase; }
+    .live-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 0 5px rgba(217,238,131,.12); }
+    .hero-art { position: relative; min-height: 390px; display: grid; place-items: center; }
+    .art-ring { position: absolute; width: min(390px, 90%); aspect-ratio: 1; border: 1px solid rgba(217,238,131,.28); border-radius: 50%; }
+    .art-ring::before, .art-ring::after { position: absolute; inset: 28px; border: 1px solid rgba(255,255,255,.12); border-radius: 50%; content: ""; }
+    .art-ring::after { inset: 58px; border-style: dashed; border-color: rgba(255,255,255,.13); }
+    .laptop-illustration { position: relative; z-index: 1; width: min(430px, 100%); filter: drop-shadow(0 26px 24px rgba(0,0,0,.2)); }
+    .art-index { position: absolute; right: 0; bottom: 28px; z-index: 2; display: grid; gap: 5px; padding: 13px 15px; background: var(--lime); color: var(--green-950); }
+    .art-index span:first-child { font: 700 9px/1.3 var(--mono); letter-spacing: .12em; text-transform: uppercase; }
+    .art-index span:last-child { font: 500 18px/1 var(--serif); }
+
+    /* Bandeau de repères locaux */
+    .local-band { background: var(--lime); color: var(--green-950); }
+    .local-band-inner { min-height: 58px; display: flex; align-items: center; justify-content: space-between; gap: 16px; font: 700 10px/1.4 var(--mono); letter-spacing: .09em; text-transform: uppercase; }
+    .local-band-item { display: inline-flex; align-items: center; gap: 9px; }
+    .local-band-item::before { width: 5px; height: 5px; border-radius: 50%; background: var(--red); content: ""; }
+
+    /* Services : liste éditoriale plutôt qu'une grille de tuiles */
+    .services { padding-block: 104px 110px; }
+    .services-head { display: grid; grid-template-columns: 1fr .7fr; align-items: end; gap: 40px; margin-bottom: 48px; }
+    .services-head .section-intro { margin: 0 0 5px auto; }
+    .service-list { border-top: 1px solid var(--line); }
+    .service-item { display: grid; grid-template-columns: 72px minmax(180px, .78fr) 1.25fr 24px; align-items: center; gap: 20px; min-height: 108px; border-bottom: 1px solid var(--line); }
+    .service-number { color: var(--red); font: 11px var(--mono); }
+    .service-item h3 { margin: 0; font: 500 22px/1.2 var(--serif); }
+    .service-item p { max-width: 500px; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.65; }
+    .service-arrow { color: var(--green-700); font: 20px var(--sans); }
+
+    /* Tarifs : montants en FCFA, toujours présentés comme indicatifs */
+    .pricing { padding-block: 90px 100px; background: #e9eee7; }
+    .pricing-top { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 38px; }
+    .pricing-note { max-width: 300px; margin: 0 0 4px; color: var(--muted); font-size: 12px; line-height: 1.65; }
+    .price-table-wrap { overflow-x: auto; border-top: 1px solid #cbd5cb; }
+    .price-table { width: 100%; border-collapse: collapse; text-align: left; }
+    .price-table caption { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    .price-table th { padding: 15px 10px; color: var(--muted); font: 700 9px/1.4 var(--mono); letter-spacing: .12em; text-transform: uppercase; }
+    .price-table th:first-child, .price-table td:first-child { padding-left: 0; }
+    .price-table td { padding: 20px 10px; border-top: 1px solid #cbd5cb; vertical-align: top; }
+    .price-service { color: var(--ink); font: 500 19px/1.3 var(--serif); }
+    .price-detail { display: block; margin-top: 5px; color: var(--muted); font-size: 11px; line-height: 1.55; }
+    .price-amount { white-space: nowrap; color: var(--green-900); font: 700 15px/1.4 var(--mono); }
+    .price-amount small { color: var(--muted); font: 10px var(--sans); }
+    .pricing-footnote { display: flex; align-items: flex-start; gap: 12px; margin: 22px 0 0; color: var(--muted); font-size: 11px; line-height: 1.65; }
+    .pricing-footnote strong { color: var(--red); font: 700 10px var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+
+    /* Horaires et zone de service */
+    .visit { padding-block: 105px; }
+    .visit-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 74px; align-items: start; }
+    .visit-details { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+    .visit-card { min-height: 180px; padding: 24px; background: var(--white); }
+    .visit-card h3 { margin: 0 0 17px; color: var(--green-700); font: 700 10px/1.4 var(--mono); letter-spacing: .13em; text-transform: uppercase; }
+    .visit-card p { margin: 0; color: var(--ink); font: 500 20px/1.25 var(--serif); }
+    .visit-card small { display: block; margin-top: 10px; color: var(--muted); font-size: 11px; line-height: 1.55; }
+    .hours-list { margin: 0; padding: 0; list-style: none; }
+    .hours-list li { display: flex; justify-content: space-between; gap: 10px; padding-block: 7px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; }
+    .hours-list li:first-child { border-top: 0; padding-top: 0; }
+    .hours-list strong { color: var(--ink); font-weight: 650; white-space: nowrap; }
+
+    /* Bloc de contact final */
+    .contact { position: relative; overflow: hidden; padding-block: 88px 90px; background: var(--green-950); color: var(--white); }
+    .contact::before { position: absolute; top: -170px; right: -80px; width: 440px; height: 440px; border: 1px solid rgba(217,238,131,.2); border-radius: 50%; content: ""; }
+    .contact-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr .75fr; gap: 52px; align-items: end; }
+    .contact .eyebrow { color: var(--lime); }
+    .contact .section-title { color: var(--white); }
+    .contact-copy { max-width: 510px; margin: 17px 0 0; color: #c5d4ca; font-size: 14px; line-height: 1.75; }
+    .contact-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+    .contact-card { display: grid; gap: 0; padding: 20px 22px; border: 1px solid rgba(255,255,255,.28); }
+    .contact-line { display: grid; grid-template-columns: 74px 1fr; gap: 12px; padding-block: 12px; border-bottom: 1px solid rgba(255,255,255,.18); }
+    .contact-line:last-child { border-bottom: 0; }
+    .contact-label { color: #b6c8bd; font: 700 9px/1.5 var(--mono); letter-spacing: .1em; text-transform: uppercase; }
+    .contact-line a, .contact-value { color: var(--white); font-size: 12px; line-height: 1.55; overflow-wrap: anywhere; }
+    .contact-line a:hover { color: var(--lime); }
+    .fiction-notice { position: relative; z-index: 1; max-width: 1160px; margin: 48px auto 0; padding-top: 15px; border-top: 1px solid rgba(255,255,255,.2); color: #c4d3c9; font-size: 11px; line-height: 1.65; }
+    .fiction-notice strong { color: var(--lime); }
+
+    /* Pied de page */
+    .site-footer { background: #0c2b24; color: #c2d0c7; }
+    .footer-inner { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 20px; font-size: 10px; }
+    .footer-inner p { margin: 0; }
+    .footer-inner a { color: var(--white); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+
+    /* Adaptation mobile et petits écrans */
+    @media (max-width: 860px) {
+      .header-inner { min-height: 74px; }
+      .header-right { gap: 12px; }
+      .site-nav { gap: 15px; }
+      .hero-grid { min-height: 0; gap: 28px; padding-block: 60px; }
+      .hero-art { min-height: 330px; }
+      .services-head { grid-template-columns: 1fr; gap: 16px; }
+      .services-head .section-intro { margin: 0; }
+      .visit-grid { gap: 34px; }
+      .contact-inner { gap: 30px; }
+    }
+    @media (max-width: 700px) {
+      .container { width: min(100% - 36px, 560px); }
+      .header-inner { min-height: 70px; }
+      html.js .nav-toggle { display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+      html.js .site-nav { display: none; position: absolute; top: calc(100% - 1px); right: 18px; left: 18px; padding: 14px; border: 1px solid rgba(255,255,255,.2); background: var(--green-950); box-shadow: var(--shadow); }
+      html.js .site-nav.is-open { display: grid; gap: 0; }
+      html.js .site-nav a { padding: 14px 10px; border-bottom: 1px solid rgba(255,255,255,.12); }
+      html.js .site-nav a:last-child { border-bottom: 0; }
+      html.js .nav-contact { margin-top: 8px; text-align: center; }
+      html:not(.js) .header-inner { align-items: flex-start; flex-wrap: wrap; padding-block: 14px; }
+      html:not(.js) .site-nav { flex-wrap: wrap; justify-content: flex-start; gap: 12px; }
+      .hero-grid { grid-template-columns: 1fr; padding-block: 54px 50px; }
+      .hero h1 { max-width: 590px; font-size: clamp(48px, 11vw, 70px); }
+      .hero-copy { max-width: 530px; font-size: 14px; }
+      .hero-art { min-height: 275px; margin-top: 6px; }
+      .art-ring { width: min(300px, 82%); }
+      .laptop-illustration { width: min(360px, 95%); }
+      .art-index { right: 4%; bottom: 0; }
+      .local-band-inner { min-height: 0; flex-wrap: wrap; justify-content: flex-start; gap: 12px 24px; padding-block: 15px; font-size: 9px; }
+      .services, .visit { padding-block: 72px; }
+      .service-item { grid-template-columns: 34px 1fr 20px; gap: 10px 14px; padding-block: 19px; }
+      .service-item h3 { font-size: 20px; }
+      .service-item p { grid-column: 2 / 3; grid-row: 2; font-size: 12px; }
+      .service-arrow { grid-column: 3; grid-row: 1; }
+      .pricing { padding-block: 72px; }
+      .pricing-top { display: block; }
+      .pricing-note { margin-top: 14px; }
+      .price-table th { font-size: 8px; }
+      .price-table td { padding-block: 16px; }
+      .price-service { font-size: 17px; }
+      .price-amount { font-size: 12px; }
+      .visit-grid { grid-template-columns: 1fr; }
+      .visit-details { grid-template-columns: 1fr 1fr; }
+      .visit-card { min-height: 164px; padding: 18px; }
+      .contact { padding-block: 72px; }
+      .contact-inner { grid-template-columns: 1fr; }
+      .fiction-notice { margin-top: 35px; }
+    }
+    @media (max-width: 420px) {
+      .container { width: calc(100% - 30px); }
+      .brand-name { font-size: 12px; }
+      .brand-mark { width: 33px; height: 33px; }
+      .hero h1 { font-size: 48px; }
+      .hero-actions { align-items: stretch; flex-direction: column; }
+      .hero-actions .button { width: 100%; }
+      .hero-art { min-height: 235px; }
+      .local-band-inner { gap: 10px 16px; }
+      .visit-details { grid-template-columns: 1fr; }
+      .visit-card { min-height: 0; }
+      .footer-inner { align-items: flex-start; flex-direction: column; justify-content: center; padding-block: 17px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+  </style>
+  <script>
+    // Signale au CSS que le menu mobile interactif est disponible.
+    document.documentElement.classList.add('js');
+  </script>
+</head>
+<body>
+  <div style="padding:10px 16px;background:#0c2b24;color:#ffffff;text-align:center;font:10px ui-monospace,monospace;letter-spacing:.06em">DÉMONSTRATION FICTIVE · <a href="../../index.html#projets" style="color:#d9ee83">Retour à VitrineLab ↗</a></div>
+  <a class="skip-link" href="#main">Aller au contenu principal</a>
+
+  <!-- En-tête : navigation accessible, réduite en menu sur mobile -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="MboaTech Assistance, accueil">
+        <span class="brand-mark" aria-hidden="true">M</span>
+        <span><span class="brand-name">MboaTech Assistance</span><span class="brand-note">Dépannage informatique · Yaoundé</span></span>
+      </a>
+      <div class="header-right">
+        <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false">
+          <span class="nav-toggle-label">Menu</span><span aria-hidden="true">☰</span>
+        </button>
+        <nav class="site-nav" id="site-nav" aria-label="Navigation principale">
+          <a href="#services">Services</a>
+          <a href="#tarifs">Tarifs</a>
+          <a href="#infos">Horaires & zone</a>
+          <a class="nav-contact" href="#contact">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Accueil : proposition de service et raccourcis de contact -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Entreprise fictive · Yaoundé, Cameroun</p>
+          <h1 id="hero-title">Votre ordinateur, <em>de nouveau opérationnel.</em></h1>
+          <p class="hero-copy">Diagnostic PC, dépannage logiciel et installation Wi-Fi. On vous explique le problème et le tarif avant toute intervention.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#contact" aria-label="Voir les coordonnées fictives de démonstration">Voir le contact de démonstration <span aria-hidden="true">↗</span></a>
+            <a class="button button-quiet" href="#services">Voir les services <span aria-hidden="true">↓</span></a>
+          </div>
+          <p class="hero-caption"><span class="live-dot" aria-hidden="true"></span>Assistance à Yaoundé et à distance, sur rendez-vous</p>
+        </div>
+        <div class="hero-art">
+          <div class="art-ring" aria-hidden="true"></div>
+          <!-- Illustration locale en SVG : aucun fichier image ou service externe requis. -->
+          <svg class="laptop-illustration" viewBox="0 0 480 360" role="img" aria-labelledby="laptop-title laptop-desc">
+            <title id="laptop-title">Ordinateur en cours de dépannage</title>
+            <desc id="laptop-desc">Illustration décorative d’un ordinateur portable avec outils de diagnostic.</desc>
+            <defs>
+              <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#254f43"/><stop offset="1" stop-color="#17392f"/></linearGradient>
+              <linearGradient id="metal" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e7e8d9"/><stop offset="1" stop-color="#9da99b"/></linearGradient>
+            </defs>
+            <circle cx="244" cy="169" r="137" fill="#d9ee83" opacity=".08"/>
+            <rect x="101" y="56" width="278" height="195" rx="13" fill="#0c2b24" stroke="#d4e1d4" stroke-width="3"/>
+            <rect x="113" y="68" width="254" height="171" rx="6" fill="url(#screen)"/>
+            <path d="M135 97h80M135 112h129M135 127h105" stroke="#d9ee83" stroke-width="5" stroke-linecap="round" opacity=".85"/>
+            <circle cx="333" cy="104" r="17" fill="#d9ee83"/>
+            <path d="m325 104 6 6 11-13" fill="none" stroke="#17392f" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="133" y="151" width="211" height="62" rx="5" fill="#102f27" stroke="#769184" stroke-width="1.5"/>
+            <path d="M151 171h66M151 185h108M278 171h47" stroke="#b9d0bf" stroke-width="4" stroke-linecap="round" opacity=".8"/>
+            <path d="M72 255h336l31 27c4 4 1 10-5 10H47c-6 0-9-6-5-10l30-27Z" fill="url(#metal)" stroke="#f2f1e7" stroke-width="2"/>
+            <path d="M192 260h96l-8 13h-80l-8-13Z" fill="#718276"/>
+            <path d="M52 289h376" stroke="#d9ee83" stroke-width="2" opacity=".65"/>
+            <circle cx="380" cy="70" r="4" fill="#d9ee83"/><circle cx="394" cy="83" r="2.5" fill="#fffefa" opacity=".8"/>
+          </svg>
+          <div class="art-index" aria-hidden="true"><span>Atelier numérique</span><span>Diagnostic clair.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Repères rapides -->
+    <div class="local-band" aria-label="Informations rapides">
+      <div class="container local-band-inner">
+        <span class="local-band-item">Yaoundé, Cameroun</span>
+        <span class="local-band-item">PC & ordinateurs portables</span>
+        <span class="local-band-item">Particuliers & petites structures</span>
+      </div>
+    </div>
+
+    <!-- Services proposés -->
+    <section class="services container" id="services" aria-labelledby="services-title">
+      <div class="services-head">
+        <div><p class="eyebrow">01 · Prestations</p><h2 class="section-title" id="services-title">On cherche la cause, puis on répare.</h2></div>
+        <p class="section-intro">Un dépannage utile commence par un diagnostic. Vous savez ce qui sera fait et ce que cela coûtera avant de donner votre accord.</p>
+      </div>
+      <div class="service-list">
+        <article class="service-item"><span class="service-number">01 / PC</span><h3>Diagnostic & réparation</h3><p>Ordinateur qui ne démarre plus, écran bleu, surchauffe ou panne matérielle : identification du problème et proposition de solution.</p><span class="service-arrow" aria-hidden="true">↗</span></article>
+        <article class="service-item"><span class="service-number">02 / LOGICIEL</span><h3>Nettoyage & optimisation</h3><p>Suppression de logiciels indésirables, mises à jour et réglages pour retrouver un fonctionnement plus fluide.</p><span class="service-arrow" aria-hidden="true">↗</span></article>
+        <article class="service-item"><span class="service-number">03 / SYSTÈME</span><h3>Installation & sauvegarde</h3><p>Installation ou réinstallation du système, pilotes et logiciels courants. Les besoins de sauvegarde sont convenus avant toute opération.</p><span class="service-arrow" aria-hidden="true">↗</span></article>
+        <article class="service-item"><span class="service-number">04 / RÉSEAU</span><h3>Wi-Fi & périphériques</h3><p>Configuration du Wi-Fi, d’une imprimante ou d’un autre périphérique, à domicile ou dans un petit bureau.</p><span class="service-arrow" aria-hidden="true">↗</span></article>
+      </div>
+    </section>
+
+    <!-- Tarifs indicatifs en FCFA -->
+    <section class="pricing" id="tarifs" aria-labelledby="pricing-title">
+      <div class="container">
+        <div class="pricing-top">
+          <div><p class="eyebrow">02 · Prix indicatifs</p><h2 class="section-title" id="pricing-title">Un tarif annoncé avant le travail.</h2></div>
+          <p class="pricing-note">Montants de démonstration en FCFA. Le prix final dépend du diagnostic et des pièces nécessaires.</p>
+        </div>
+        <div class="price-table-wrap">
+          <table class="price-table">
+            <caption>Exemples de tarifs indicatifs pour les prestations de MboaTech Assistance</caption>
+            <thead><tr><th scope="col">Prestation</th><th scope="col">Détail</th><th scope="col">Tarif indicatif</th></tr></thead>
+            <tbody>
+              <tr><td class="price-service">Diagnostic de base</td><td><span class="price-detail">Recherche de panne sur PC ou ordinateur portable.</span></td><td class="price-amount">5 000 <small>FCFA</small></td></tr>
+              <tr><td class="price-service">Dépannage logiciel</td><td><span class="price-detail">Nettoyage, mises à jour et optimisation simple.</span></td><td class="price-amount">À partir de 10 000 <small>FCFA</small></td></tr>
+              <tr><td class="price-service">Installation système</td><td><span class="price-detail">Installation, pilotes et configuration de base.</span></td><td class="price-amount">À partir de 15 000 <small>FCFA</small></td></tr>
+              <tr><td class="price-service">Wi-Fi ou imprimante</td><td><span class="price-detail">Configuration d’un réseau ou d’un périphérique.</span></td><td class="price-amount">À partir de 7 500 <small>FCFA</small></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="pricing-footnote"><strong>À noter</strong><span>Pièces, déplacement et interventions complexes non compris. Un devis est communiqué et validé avant toute intervention.</span></p>
+      </div>
+    </section>
+
+    <!-- Horaires et lieu -->
+    <section class="visit container" id="infos" aria-labelledby="visit-title">
+      <div class="visit-grid">
+        <div><p class="eyebrow">03 · Où & quand</p><h2 class="section-title" id="visit-title">Un service de proximité à Yaoundé.</h2><p class="section-intro">Contactez l’atelier pour convenir d’un rendez-vous. Les interventions à domicile dépendent de la zone et du type de panne.</p></div>
+        <div class="visit-details">
+          <article class="visit-card"><h3>Ville</h3><p>Yaoundé</p><small>Cameroun · atelier et interventions sur rendez-vous</small></article>
+          <article class="visit-card"><h3>Horaires</h3><ul class="hours-list"><li><span>Lundi – vendredi</span><strong>08:00 – 18:00</strong></li><li><span>Samedi</span><strong>09:00 – 15:00</strong></li><li><span>Dimanche</span><strong>Fermé</strong></li></ul></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact direct : liens téléphonique et e-mail, sans formulaire -->
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="container contact-inner">
+        <div>
+          <p class="eyebrow">04 · Contact direct</p>
+          <h2 class="section-title" id="contact-title">Parlons du problème.</h2>
+          <p class="contact-copy">Appelez ou envoyez un e-mail avec une courte description de la panne. Aucun formulaire n’est utilisé sur cette page.</p>
+          <div class="contact-actions">
+            <a class="button button-primary" href="#contact" aria-label="Voir les coordonnées fictives de démonstration">Voir les contacts <span aria-hidden="true">↗</span></a>
+            <a class="button button-quiet" href="mailto:bonjour@mboatech.example?subject=Demande%20de%20d%C3%A9pannage">Envoyer un e-mail <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div class="contact-card" aria-label="Coordonnées fictives de démonstration">
+          <div class="contact-line"><span class="contact-label">Téléphone</span><span>+237 6XX XX XX XX (fictif)</span></div>
+          <div class="contact-line"><span class="contact-label">E-mail</span><a href="mailto:bonjour@mboatech.example">bonjour@mboatech.example</a></div>
+          <div class="contact-line"><span class="contact-label">Ville</span><span class="contact-value">Yaoundé, Cameroun</span></div>
+          <div class="contact-line"><span class="contact-label">Horaires</span><span class="contact-value">Lun–ven 08:00–18:00<br>Sam 09:00–15:00</span></div>
+        </div>
+      </div>
+      <p class="container fiction-notice"><strong>Maquette de démonstration :</strong> MboaTech Assistance, son numéro et son adresse e-mail sont fictifs. Le numéro masqué et le domaine .example ne sont pas des coordonnées réelles. Remplacez-les avant publication. Cette page ne collecte ni ne transmet de données.</p>
+    </section>
+  </main>
+
+  <!-- Pied de page -->
+  <footer class="site-footer"><div class="container footer-inner"><p>© 2026 MboaTech Assistance · Maquette fictive</p><p><a href="#top">Retour en haut ↑</a></p></div></footer>
+
+  <script>
+    // Menu mobile : ouverture, fermeture par Escape et fermeture après navigation.
+    const menuButton = document.querySelector('.nav-toggle');
+    const siteNav = document.querySelector('#site-nav');
+    const menuLabel = document.querySelector('.nav-toggle-label');
+
+    function setMenuOpen(isOpen) {
+      menuButton.setAttribute('aria-expanded', String(isOpen));
+      siteNav.classList.toggle('is-open', isOpen);
+      menuLabel.textContent = isOpen ? 'Fermer' : 'Menu';
+    }
+
+    menuButton.addEventListener('click', () => {
+      const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+      setMenuOpen(!isOpen);
+    });
+
+    siteNav.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => setMenuOpen(false));
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && menuButton.getAttribute('aria-expanded') === 'true') {
+        setMenuOpen(false);
+        menuButton.focus();
+      }
+    });
+
+    // Quand l’écran repasse en grand format, remet le menu dans son état initial.
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 700) setMenuOpen(false);
+    });
+  </script>
+</body>
+</html>

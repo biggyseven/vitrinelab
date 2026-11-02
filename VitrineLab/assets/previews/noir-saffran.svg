@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#10110f"/>
+      <stop offset="100%" stop-color="#29251d"/>
+    </linearGradient>
+    <radialGradient id="glow">
+      <stop offset="0%" stop-color="#b38a4c" stop-opacity=".27"/>
+      <stop offset="100%" stop-color="#b38a4c" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <circle cx="900" cy="390" r="380" fill="url(#glow)"/>
+  <rect x="42" y="42" width="1116" height="716" fill="none"
+        stroke="#b99b68" stroke-opacity=".55"/>
+  <path d="M600 180 C760 180 860 290 860 410 C860 560 750 650 600 650
+           C450 650 340 560 340 410 C340 290 440 180 600 180Z"
+        fill="none" stroke="#b99b68" stroke-opacity=".7" stroke-width="2"/>
+  <path d="M600 205 C735 205 835 300 835 410 C835 535 735 625 600 625
+           C465 625 365 535 365 410 C365 300 465 205 600 205Z"
+        fill="none" stroke="#f0dfbd" stroke-opacity=".18"/>
+  <text x="600" y="365" text-anchor="middle" fill="#ead9b8"
+        font-family="Georgia,serif" font-size="66" letter-spacing="8">
+    NOIR &amp;
+  </text>
+  <text x="600" y="445" text-anchor="middle" fill="#ead9b8"
+        font-family="Georgia,serif" font-size="66" letter-spacing="8">
+    SAFFRAN
+  </text>
+  <path d="M470 485 H730" stroke="#b99b68" stroke-width="2"/>
+  <text x="600" y="530" text-anchor="middle" fill="#c5b28e"
+        font-family="Arial,sans-serif" font-size="18" letter-spacing="7">
+    ART DE LA TABLE
+  </text>
+  <text x="600" y="700" text-anchor="middle" fill="#b99b68"
+        font-family="Arial,sans-serif" font-size="15" letter-spacing="4">
+    GASTRONOMIE · ÉVÉNEMENTS · RÉSERVATIONS
+  </text>
+</svg>

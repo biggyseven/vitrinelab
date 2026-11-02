@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="VitrineLab conçoit des sites web, boutiques en ligne et expériences digitales pour les entreprises et indépendants au Cameroun.">
+  <meta name="theme-color" content="#171814">
+  <meta property="og:title" content="VitrineLab | Votre activité mérite une vraie présence digitale">
+  <meta property="og:description" content="Création de sites web, boutiques en ligne et expériences digitales à Douala, Cameroun.">
+  <title>VitrineLab | Studio digital à Douala, Cameroun</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="contact-config.js"></script>
+  <script src="scripts.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="#accueil" aria-label="VitrineLab, accueil">VITRINE<span>LAB</span><i>.</i></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span></button>
+    <nav class="main-nav" id="mainNav" aria-label="Navigation principale">
+      <a href="#services">Services</a><a href="#projets">Projets</a><a href="#offres">Offres</a><a href="#apropos">Studio</a>
+      <a class="nav-cta" href="#contact">Parler de mon projet <span>↗</span></a>
+    </nav>
+  </header>
+  <main>
+    <section class="hero section" id="accueil">
+      <div class="hero-kicker"><span class="live-dot"></span> STUDIO DIGITAL INDÉPENDANT <span class="hero-place">DOUALA · CAMEROUN</span></div>
+      <div class="hero-main">
+        <div><p class="eyebrow">DES IDÉES QUI PRENNENT FORME</p><h1>Votre activité.<br>Une présence<br><span class="lime">qui marque.</span></h1></div>
+        <div class="hero-side"><p>Nous créons des sites web clairs, élégants et utiles pour aider les entreprises à mieux se présenter, à gagner la confiance et à recevoir des demandes.</p><a class="round-link" href="#projets">Explorer les projets <span>↓</span></a></div>
+      </div>
+      <div class="hero-foot"><span>WEB DESIGN / DÉVELOPPEMENT / EXPÉRIENCE DIGITALE</span><span>CONÇU À DOUALA, PENSÉ POUR VOS CLIENTS ↘</span></div>
+      <div class="hero-stamp" aria-hidden="true"><span>VL</span><small>EST. DIGITAL STUDIO</small></div>
+    </section>
+
+    <section class="ticker" aria-label="Domaines de création"><div class="ticker-track">SITES VITRINES <b>✳</b> BOUTIQUES EN LIGNE <b>✳</b> LANDING PAGES <b>✳</b> DESIGN DIGITAL <b>✳</b> SITES VITRINES <b>✳</b> BOUTIQUES EN LIGNE <b>✳</b> LANDING PAGES <b>✳</b> DESIGN DIGITAL <b>✳</b></div></section>
+
+    <section class="section services-section" id="services">
+      <div class="section-heading"><div><p class="eyebrow">01 / NOS SERVICES</p><h2>Du digital<br><span class="muted">qui travaille pour vous.</span></h2></div><p class="section-intro">Un site ne doit pas seulement être joli. Il doit expliquer votre offre, rassurer vos visiteurs et faciliter le prochain pas.</p></div>
+      <div class="service-grid">
+        <article class="service-card"><span class="service-no">01</span><div class="service-symbol">↗</div><h3>Sites vitrines</h3><p>Présentez votre entreprise, vos services, vos réalisations et vos coordonnées dans une expérience simple et professionnelle.</p><span class="service-foot">PRÉSENCE EN LIGNE</span></article>
+        <article class="service-card"><span class="service-no">02</span><div class="service-symbol">▦</div><h3>Boutiques & catalogues</h3><p>Exposez vos produits, organisez votre catalogue et facilitez les commandes, notamment par WhatsApp.</p><span class="service-foot">VENTE & COMMANDE</span></article>
+        <article class="service-card"><span class="service-no">03</span><div class="service-symbol">✳</div><h3>Pages & expériences</h3><p>Landing pages, réservation, événements et portfolios conçus autour d'un objectif précis.</p><span class="service-foot">CONVERSION & IMAGE</span></article>
+      </div>
+    </section>
+
+    <section class="section projects-section" id="projets">
+      <div class="section-heading"><div><p class="eyebrow">02 / PROJETS SÉLECTIONNÉS</p><h2>Onze univers.<br><span class="muted">Onze façons de se démarquer.</span></h2></div><p class="section-intro">Explorez les démonstrations VitrineLab. Chaque vignette présente l’univers graphique du projet. Ouvrez un mini-site pour parcourir l’expérience complète.</p></div>
+      <div class="project-tools"><span class="eyebrow">SÉLECTIONNER UN UNIVERS</span><div class="filters" id="projectFilters"><button class="filter-btn active" data-filter="all">Tout voir</button><button class="filter-btn" data-filter="commerce">Commerce</button><button class="filter-btn" data-filter="service">Services</button><button class="filter-btn" data-filter="culture">Culture & création</button><button class="filter-btn" data-filter="energie">Énergie</button></div></div>
+      <div class="projects-grid" id="projectsGrid">
+        <article class="project-card project-featured" data-category="commerce"><a class="project-image" href="demos/maison-sawa/index.html"><img src="assets/previews/maison-sawa.png" alt="Aperçu du mini-site Maison Sawa" loading="lazy"><span class="image-open">OUVRIR LE SITE ↗</span><span class="project-type">RESTAURANT · GASTRONOMIE</span></a><div class="project-meta"><div><span class="project-index">01 / RESTAURATION</span><h3>Maison Sawa</h3></div><a class="project-arrow" href="demos/maison-sawa/index.html" aria-label="Ouvrir Maison Sawa">↗</a></div></article>
+        <article class="project-card" data-category="commerce"><a class="project-image" href="demos/nova-market/index.html"><img src="assets/previews/nova-market.png" alt="Aperçu du mini-site NOVA Market" loading="lazy"><span class="image-open">OUVRIR LE SITE ↗</span><span class="project-type">BOUTIQUE EN LIGNE</span></a><div class="project-meta"><div><span class="project-index">02 / E-COMMERCE</span><h3>NOVA Market</h3></div><a class="project-arrow" href="demos/nova-market/index.html" aria-label="Ouvrir NOVA Market">↗</a></div></article>
+        <article class="project-card" data-category="service"><a class="project-image" href="demos/studio-naya/index.html"><img src="assets/previews/studio-naya.png" alt="Aperçu du mini-site Studio Naya" loading="lazy"><span class="image-open">OUVRIR LE SITE ↗</span><span class="project-type">BEAUTÉ · RENDEZ-VOUS</span></a><div class="project-meta"><div><span class="project-index">03 / RÉSERVATION</span><h3>Studio Naya</h3></div><a class="project-arrow" href="demos/studio-naya/index.html" aria-label="Ouvrir Studio Naya">↗</a></div></article>
+        <article class="project-card" data-category="culture"><a class="project-image" href="demos/afro-future/index.html"><img src="assets/previews/afro-future.png" alt="Aperçu du mini-site AFRO FUTURE" loading="lazy"><span class="image-open">OUVRIR LE SITE ↗</span><span class="project-type">ÉVÉNEMENT · CULTURE</span></a><div class="project-meta"><div><span class="project-index">04 / ÉVÉNEMENTIEL</span><h3>AFRO FUTURE</h3></div><a class="project-arrow" href="demos/afro-future/index.html" aria-label="Ouvrir AFRO FUTURE">↗</a></div></article>
+        <article class="project-card" data-category="culture"><a class="project-image" href="demos/k-creative/index.html"><img src="assets/previews/k-creative.png" alt="Aperçu du mini-site K. Creative" loading="lazy"><span class="image-open">OUVRIR LE SITE ↗</span><span class="project-type">PORTFOLIO · CRÉATIVITÉ</span></a><div class="project-meta"><div><span class="project-index">05 / PORTFOLIO</span><h3>K. Creative</h3></div><a class="project-arrow" href="demos/k-creative/index.html" aria-label="Ouvrir K. Creative">↗</a></div></article>
+        <article class="project-card" data-category="commerce"><a class="project-image" href="demos/kono-kitchen/index.html"><img src="assets/previews/kono-kitchen.png" alt="Aperçu du mini-site Kono Kitchen" loading="lazy"><span class="image-open">OUVRIR LE SITE ↗</span><span class="project-type">RESTAURANT · CUISINE</span></a><div class="project-meta"><div><span class="project-index">06 / RESTAURATION</span><h3>Kono Kitchen</h3></div><a class="project-arrow" href="demos/kono-kitchen/index.html" aria-label="Ouvrir Kono Kitchen">↗</a></div></article>
+        <article class="project-card" data-category="service"><a class="project-image" href="demos/atelier-naya/index.html"><img src="assets/previews/atelier-naya.png" alt="Aperçu du mini-site Atelier Naya" loading="lazy"><span class="image-open">OUVRIR LE SITE ↗</span><span class="project-type">BEAUTÉ · SALON</span></a><div class="project-meta"><div><span class="project-index">07 / SERVICES</span><h3>Atelier Naya</h3></div><a class="project-arrow" href="demos/atelier-naya/index.html" aria-label="Ouvrir Atelier Naya">↗</a></div></article>
+        <article class="project-card" data-category="service"><a class="project-image" href="demos/mboatech/index.html"><img src="assets/previews/mboatech.png" alt="Aperçu du mini-site MboaTech Assistance" loading="lazy"><span class="image-open">OUVRIR LE SITE ↗</span><span class="project-type">TECHNOLOGIE · ASSISTANCE</span></a><div class="project-meta"><div><span class="project-index">08 / TECHNOLOGIE</span><h3>MboaTech Assistance</h3></div><a class="project-arrow" href="demos/mboatech/index.html" aria-label="Ouvrir MboaTech Assistance">↗</a></div></article>
+        <article class="project-card project-featured" data-category="energie"><a class="project-image" href="demos/solis-energie/index.html"><img src="assets/previews/solis-energie.png" alt="Aperçu du mini-site conceptuel SOLIS ÉNERGIE" loading="lazy"><span class="image-open">OUVRIR LE SITE ↗</span><span class="project-type">ÉNERGIE · SOLAIRE</span></a><div class="project-meta"><div><span class="project-index">09 / ÉNERGIE</span><h3>SOLIS ÉNERGIE</h3></div><a class="project-arrow" href="demos/solis-energie/index.html" aria-label="Ouvrir SOLIS ÉNERGIE">↗</a></div></article>
+        <article class="project-card project-featured" data-category="commerce"><a class="project-image" href="demos/eloria-beauty/index.html"><img src="assets/previews/eloria-beauty.png" alt="Aperçu de la boutique conceptuelle ÉLORIA BEAUTY" loading="lazy"><span class="image-open">OUVRIR LA BOUTIQUE ↗</span><span class="project-type">E-COMMERCE · BEAUTÉ</span></a><div class="project-meta"><div><span class="project-index">10 / E-COMMERCE</span><h3>ÉLORIA BEAUTY</h3></div><a class="project-arrow" href="demos/eloria-beauty/index.html" aria-label="Ouvrir ÉLORIA BEAUTY">↗</a></div></article>
+        <article class="project-card project-featured" data-category="commerce" data-project="noir-saffran">
+          <a class="project-image" href="../../noir-saffran/public/">
+            <img src="assets/previews/noir-saffran.svg" alt="Aperçu du projet NOIR & SAFFRAN" loading="lazy">
+            <span class="image-open">DÉCOUVRIR LE PROJET ↗</span>
+            <span class="project-type">PLATEFORME WEB · RESTAURATION</span>
+          </a>
+          <div class="project-meta">
+            <div>
+              <span class="project-index">11 / PROJET RÉALISÉ</span>
+              <h3>NOIR &amp; SAFFRAN</h3>
+            </div>
+            <a class="project-arrow" href="../../noir-saffran/public/" aria-label="Découvrir NOIR & SAFFRAN">↗</a>
+          </div>
+        </article>
+      </div>
+      <p class="demo-disclaimer">Les mini-sites présentés sont des démonstrations de conception. NOIR &amp; SAFFRAN est une réalisation fonctionnelle présentée à titre de référence. Les données sensibles et les accès d'administration ne sont pas exposés.</p>
+    </section>
+
+    <section class="offers-section" id="offres"><div class="section offers-inner">
+      <div class="section-heading"><div><p class="eyebrow">03 / FORMULES DE DÉPART</p><h2>Un bon site.<br><span class="muted">Un budget clair.</span></h2></div><p class="section-intro">Des points de départ pour cadrer la discussion. Le devis final dépend du nombre de pages, du contenu, des fonctionnalités et des services externes.</p></div>
+      <div class="price-grid">
+        <article class="price-card"><span class="price-label">POUR SE LANCER</span><h3>Page Express</h3><p class="price">75 000 <small>FCFA</small><sup> à partir de</sup></p><p class="price-desc">Une page professionnelle pour présenter l'essentiel et recevoir des contacts.</p><ul><li>Landing page responsive</li><li>Présentation, services et contacts</li><li>Bouton WhatsApp</li><li>Référencement de base</li></ul><a class="price-link" href="#contact" data-offer="Page Express">Demander cette formule ↗</a></article>
+        <article class="price-card price-popular"><span class="price-label">POUR DÉVELOPPER SON IMAGE</span><span class="popular-tag">LE PLUS POLYVALENT</span><h3>Site Vitrine</h3><p class="price">150 000 <small>FCFA</small><sup> à partir de</sup></p><p class="price-desc">Un site structuré pour expliquer votre activité et inspirer confiance.</p><ul><li>Jusqu'à 5 pages selon le besoin</li><li>Design personnalisé et mobile</li><li>Formulaire et WhatsApp</li><li>SEO de base et galerie</li></ul><a class="price-link" href="#contact" data-offer="Site Vitrine">Demander cette formule ↗</a></article>
+        <article class="price-card"><span class="price-label">POUR PRÉSENTER SES PRODUITS</span><h3>Boutique / Catalogue</h3><p class="price">180 000 <small>FCFA</small><sup> à partir de</sup></p><p class="price-desc">Un catalogue soigné avec panier ou prise de commande selon le projet.</p><ul><li>Catalogue de produits</li><li>Catégories et fiches produits</li><li>Commande WhatsApp selon besoin</li><li>Accompagnement à la prise en main</li></ul><a class="price-link" href="#contact" data-offer="Boutique / Catalogue">Demander cette formule ↗</a></article>
+      </div>
+      <p class="pricing-note">Tarifs de départ indicatifs proposés comme base commerciale VitrineLab, à confirmer avant publication. Nom de domaine, hébergement, contenus, paiement en ligne et maintenance peuvent faire l'objet d'un devis séparé.</p>
+    </div></section>
+
+    <section class="section about-section" id="apropos"><div class="about-inner"><div><p class="eyebrow">04 / NOTRE APPROCHE</p><h2>Le beau attire.<br><span class="lime">Le fonctionnel</span><br>fait rester.</h2></div><div class="about-copy"><p>Chez VitrineLab, nous pensons qu'un bon site web doit être agréable à regarder, simple à utiliser et utile à votre activité.</p><p>Nous avançons avec une méthode claire : comprendre votre besoin, définir une expérience adaptée et construire une présence digitale qui vous ressemble.</p><div class="about-note"><span class="live-dot"></span> BASÉS À DOUALA, AU SERVICE DE VOS PROJETS.</div></div></div></section>
+
+    <section class="section process-section"><div class="section-heading"><div><p class="eyebrow">05 / LE PROCESSUS</p><h2>Simple, clair,<br><span class="muted">efficace.</span></h2></div></div><div class="process-grid"><article><span>01</span><h3>On échange</h3><p>Vous présentez votre activité, vos objectifs et vos priorités.</p></article><article><span>02</span><h3>On définit</h3><p>Nous cadrons le contenu, les pages, le style et les fonctionnalités.</p></article><article><span>03</span><h3>On construit</h3><p>Nous développons, testons et vous présentons le site pour validation.</p></article><article><span>04</span><h3>On lance</h3><p>Après validation, votre site est prêt à être partagé à vos clients.</p></article></div></section>
+
+    <section class="faq-section"><div class="section faq-inner"><div class="section-heading"><div><p class="eyebrow">06 / QUESTIONS FRÉQUENTES</p><h2>Avant de<br><span class="muted">commencer.</span></h2></div></div><div class="faq-list"><details><summary>Les prix affichés sont-ils définitifs ? <span>+</span></summary><p>Non. Ce sont des prix de départ indicatifs. Un devis précise les pages, les fonctionnalités, les contenus et les coûts éventuels de domaine ou d'hébergement.</p></details><details><summary>Est-ce que le site fonctionnera sur téléphone ? <span>+</span></summary><p>Oui. Les projets sont conçus pour s'adapter aux téléphones, tablettes et ordinateurs.</p></details><details><summary>Pourrai-je modifier le contenu plus tard ? <span>+</span></summary><p>Cela dépend de la solution retenue. Les possibilités de modification et d'administration sont définies dans le devis.</p></details><details><summary>Comment démarrer un projet ? <span>+</span></summary><p>Envoyez-nous votre idée, votre secteur d'activité et votre budget approximatif via le formulaire WhatsApp ci-dessous.</p></details></div></div></section>
+
+    <section class="contact-section" id="contact"><div class="section contact-inner"><p class="eyebrow">07 / VOTRE PROJET COMMENCE ICI</p><div class="contact-heading"><h2>Construisons<br>votre <span>prochaine vitrine.</span></h2><p>Quelques informations suffisent pour lancer la discussion. Votre demande sera préparée dans WhatsApp.</p></div>
+      <form id="quoteForm" class="quote-form"><div class="form-row"><label>Votre nom<input type="text" id="clientName" name="name" placeholder="Ex. : Marie" required></label><label>Votre activité<input type="text" id="clientBusiness" name="business" placeholder="Ex. : Restaurant, boutique..." required></label></div><div class="form-row"><label>Type de site<select id="clientService" name="service"><option value="Je ne sais pas encore">Je ne sais pas encore</option><option>Page Express</option><option>Site Vitrine</option><option>Boutique / Catalogue</option><option>Réservation / Prise de rendez-vous</option><option>Autre projet sur mesure</option></select></label><label>Budget envisagé<select id="clientBudget" name="budget"><option value="À discuter">À discuter</option><option>Moins de 100 000 FCFA</option><option>100 000 à 200 000 FCFA</option><option>200 000 à 400 000 FCFA</option><option>Plus de 400 000 FCFA</option></select></label></div><label class="full-label">Parlez-nous de votre besoin<textarea id="clientDetails" name="details" rows="4" placeholder="Que souhaitez-vous créer ? Quelles fonctionnalités vous seraient utiles ?"></textarea></label><button type="submit" class="submit-button">Envoyer ma demande sur WhatsApp <span>↗</span></button><p class="form-note">Le bouton prépare un message WhatsApp. Aucun formulaire n'est stocké sur ce site.</p></form>
+      <div class="contact-bottom"><a href="mailto:vitrinelab@gmail.com" id="emailLink">vitrinelab@gmail.com</a><span>DOUALA, CAMEROUN</span><a href="#accueil">RETOUR EN HAUT ↑</a></div>
+    </div></section>
+  </main>
+  <footer class="site-footer"><a class="logo" href="#accueil">VITRINE<span>LAB</span><i>.</i></a><span>© <span id="currentYear"></span> VITRINELAB · STUDIO DIGITAL</span><span>DOUALA, CAMEROUN</span></footer>
+</body>
+</html>

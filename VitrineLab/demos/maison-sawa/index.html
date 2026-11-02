@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Maison Sawa, cuisine camerounaise contemporaine. Découvrez notre carte et commandez en quelques clics.">
+  <meta name="theme-color" content="#171714">
+  <title>Maison Sawa | Cuisine & partage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="announcement">CUISINE LOCALE, ESPRIT CONTEMPORAIN <span>•</span> DOUALA, CAMEROUN</div>
+  <header class="header">
+    <a class="brand" href="#accueil" aria-label="Maison Sawa, accueil"><span class="brand-mark">MS</span><span>MAISON <b>SAWA</b><small>CUISINE & PARTAGE</small></span></a>
+    <nav class="nav" id="nav"><a href="#histoire">Notre maison</a><a href="#carte">La carte</a><a href="#infos">Nous trouver</a></nav>
+    <button class="cart-trigger" id="openCart" aria-label="Ouvrir le panier">PANIER <span id="cartCount">0</span></button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">☰</button>
+  </header>
+
+  <main>
+    <section class="hero" id="accueil">
+      <div class="hero-shade"></div>
+      <div class="hero-content"><p class="eyebrow light">LE GOÛT DU CAMEROUN, AUTREMENT</p><h1>Les bonnes choses<br><em>se partagent.</em></h1><p class="hero-copy">Une cuisine généreuse, des produits soigneusement choisis et une touche de créativité. Bienvenue chez vous.</p><div class="hero-actions"><a class="button button-gold" href="#carte">Découvrir la carte <span>↗</span></a><a class="text-link" href="#histoire">Notre histoire <span>↓</span></a></div></div>
+      <div class="hero-note"><span class="note-line"></span><span>CUISINÉ AVEC CŒUR<br><b>À DOUALA</b></span></div>
+      <div class="hero-bottom"><span>01 — 03</span><span>UNE TABLE. MILLE HISTOIRES.</span><span>↓ DÉFILER</span></div>
+    </section>
+
+    <section class="intro section" id="histoire"><div class="intro-image"><img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1000&q=85" alt="Table dressée avec des plats à partager"><span class="image-stamp">DEPUIS<br><b>2024</b></span></div><div class="intro-copy"><p class="eyebrow">L'ESPRIT SAWA</p><h2>Un peu de tradition.<br><em>Beaucoup d'âme.</em></h2><p>Maison Sawa célèbre les saveurs qui nous rassemblent. Des recettes inspirées du terroir camerounais, travaillées avec finesse et servies dans une atmosphère chaleureuse.</p><p>Installez-vous, prenez votre temps. Ici, chaque assiette raconte quelque chose.</p><a class="under-link" href="#carte">Explorer notre cuisine <span>↗</span></a></div></section>
+
+    <section class="menu-section section" id="carte"><div class="section-heading"><div><p class="eyebrow">FAIT MAISON, AVEC PASSION</p><h2>La carte <em>du moment.</em></h2></div><p>Des incontournables revisités<br>et des découvertes à savourer.</p></div>
+      <div class="filters" id="filters"><button class="filter active" data-filter="all">Tout découvrir</button><button class="filter" data-filter="plats">Nos plats</button><button class="filter" data-filter="grillades">Grillades</button><button class="filter" data-filter="boissons">Boissons</button><button class="filter" data-filter="desserts">Douceurs</button></div>
+      <div class="menu-grid" id="menuGrid"></div>
+      <p class="menu-footnote">Les prix sont indiqués en FCFA. Les photos sont illustratives. Certains produits peuvent varier selon le marché.</p>
+    </section>
+
+    <section class="quote-band"><div class="quote-mark">“</div><p>Le meilleur ingrédient<br>reste <em>le plaisir d'être ensemble.</em></p><span>MAISON SAWA · DOUALA</span></section>
+
+    <section class="visit section" id="infos"><div class="visit-copy"><p class="eyebrow">PASSEZ À TABLE</p><h2>On vous garde<br><em>une place ?</em></h2><p>Une envie, une question ou une commande à emporter ? Écrivez-nous directement. Notre équipe vous répondra avec plaisir.</p><a class="button button-dark" href="https://wa.me/237676055172?text=Bonjour%20Maison%20Sawa%2C%20je%20souhaite%20avoir%20des%20informations." target="_blank" rel="noopener">Nous contacter sur WhatsApp ↗</a></div><div class="visit-card"><div><span class="card-label">NOUS TROUVER</span><h3>Douala, Cameroun</h3><p>Adresse de démonstration<br>Bonapriso, Douala</p></div><div class="visit-details"><div><span class="card-label">HORAIRES INDICATIFS</span><p>Mar. – Dim. <b>11h00 – 22h00</b><br>Lundi <b>Fermé</b></p></div><div><span class="card-label">CONTACT</span><p>+237 676 055 172<br>bonjour@maisonsawa.example</p></div></div><small>Établissement fictif créé pour le portfolio VitrineLab.</small></div></section>
+  </main>
+  <footer class="footer"><a class="brand brand-footer" href="#accueil"><span class="brand-mark">MS</span><span>MAISON <b>SAWA</b><small>CUISINE & PARTAGE</small></span></a><span>UNE TABLE. MILLE HISTOIRES.</span><span>© <span id="year"></span> MAISON SAWA · DÉMO VITRINELAB</span></footer>
+
+  <div class="overlay" id="overlay"></div><aside class="cart-panel" id="cartPanel" aria-label="Votre panier" aria-hidden="true"><div class="cart-head"><div><p class="eyebrow">MAISON SAWA</p><h2>Votre panier</h2></div><button id="closeCart" class="close-cart" aria-label="Fermer">×</button></div><div class="cart-items" id="cartItems"><div class="empty-cart">Votre panier est encore vide.<br><span>La bonne cuisine n'attend que vous.</span></div></div><div class="cart-bottom"><div class="total-row"><span>Total estimé</span><strong id="cartTotal">0 FCFA</strong></div><button class="button button-gold checkout" id="checkout">Commander sur WhatsApp ↗</button><small>La commande sera préparée dans votre message WhatsApp. Aucun paiement en ligne n'est effectué sur cette démo.</small></div></aside>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body></html>
